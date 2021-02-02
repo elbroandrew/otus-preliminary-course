@@ -3,15 +3,15 @@ export const sumAndMultiplyOutput = (a, b) => {
   if (!Number.isNaN(a) || !Number.isNaN(b)) {
     return { sum: a + b, mul: a * b };
   }
-  return 'not numbers';
+  return "not numbers";
 };
 
 // 2
 export const strSum = (a, b) => {
-  if (typeof a === 'string' && typeof b === 'string') {
+  if (typeof a === "string" && typeof b === "string") {
     return a.length + b.length;
   }
-  return 'not strings';
+  return "not strings";
 };
 
 // 3
@@ -23,8 +23,8 @@ export const sumOfInputDigits = (input) => {
   if (/^(-{1})?\d{3}$/.test(input)) {
     // it is a string of 3 digits (minus sign included)
     // get array
-    const inputArray = input.split('');
-    if (inputArray[0] === '-') {
+    const inputArray = input.split("");
+    if (inputArray[0] === "-") {
       inputArray.shift();
     }
     // get sum
@@ -35,8 +35,8 @@ export const sumOfInputDigits = (input) => {
     }, 0);
     /* eslint-enable no-param-reassign */
   }
-  if (input === '') {
-    return 'Empty value';
+  if (input === "") {
+    return "Empty value";
   }
   // one or more digits is not a number
   return `${input} is not a 3-digit number`;
