@@ -36,5 +36,5 @@ export const sumOfInputNumbers = () => {
 
 }
 
-let sum = sumOfInputNumbers();
-console.log(sum);
+// let sum = sumOfInputNumbers();
+// console.log(sum);
