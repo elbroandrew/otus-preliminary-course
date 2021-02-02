@@ -1,4 +1,4 @@
-import { sumAndMultiplyOutput, strSum, sumOfInputDigits } from "./index.js";
+import { sumAndMultiplyOutput, strSum, sumOfInputDigits } from "./index";
 
 //1
 describe("exercise 1 return sum and multiply of two numbers", () => {

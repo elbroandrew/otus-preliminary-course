@@ -11,7 +11,8 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    "import/prefer-default-export": "off",
-    "linebreak-style": ["error", "windows"],
+    'import/prefer-default-export': 'off',
+    'linebreak-style': ['error', 'windows'],
+    'max-len': ['error', { 'ignoreComments': true }],
   },
 };
