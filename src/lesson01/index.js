@@ -1,40 +1,45 @@
-
 //1
 export const sumAndMultiplyOutput = (a, b) => {
-    if(typeof(a) === 'number' && typeof(a) === 'number'){
-        return {sum: a + b, mul: a * b};
-    }else{
-        return "not numbers";
-    }
-    
-}
-let a = 5;
-let b = 6;
-let obj = sumAndMultiplyOutput(2, 3);
-console.log(obj.sum, obj.mul);
-
+  if (!isNaN(a) || !isNaN(b)) {
+    return { sum: a + b, mul: a * b };
+  } else {
+    return "not numbers";
+  }
+};
 
 //2
 export const strSum = (a, b) => {
+  if (typeof a === "string" && typeof b === "string") {
     return a.length + b.length;
-}
-
-let str1 = 'fqg34thywaserfga';
-let str2 = 'qwerty';
-
-console.log(strSum(str1, str2));
-
+  } else {
+    return "not strings";
+  }
+};
 
 //3
-export const sumOfInputNumbers = () => {
-    let input = prompt("Ведите трехзначное число: ");
+/**
+ * function receives prompt string and returns digits sum
+ * @param {string} input
+ */
+export const sumOfInputDigits = (input) => {
+  if (/^(-{1})?\d{3}$/.test(input)) {
+    //it is a string of 3 digits (minus sign included)
+    //get array
+    let inputArray = input.split("");
+    if (inputArray[0] === "-") {
+      inputArray.shift();
+    }
+    //get sum
+    return inputArray.reduce((acc, digit) => {
+      return (acc += Number(digit));
+    }, 0);
+  } else if (input === "") {
+    return "Empty value";
+  } else {
+    //one or more digits is not a number
+    return `${input} is not a 3-digit number`;
+  }
+};
 
-    return input.split('').reduce((acc, value) => {
-        acc += Number(value);
-        return acc;
-    }, 0)
-
-}
-
-// let sum = sumOfInputNumbers();
-// console.log(sum);
+//let input = prompt("Enter a 3-digit integer number: ");
+//sumOfInputDigits(input);
