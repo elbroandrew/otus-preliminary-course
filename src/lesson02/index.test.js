@@ -19,10 +19,7 @@ describe("exercise 1 isGreater", () => {
 });
 
 describe("exercise 2 monthName", () => {
-  
-
   it('should return January for "1" ', () => {
-    
     expect(monthName("1")).toBe("January");
   });
 
@@ -35,29 +32,28 @@ describe("exercise 2 monthName", () => {
   });
 });
 
-describe('exercise 3 compare', () => {
-
-  it('returns "can be inscribed in a square" ', ()=>{
+describe("exercise 3 compare", () => {
+  it('returns "can be inscribed in a square" ', () => {
     const squareArea = 150;
     const circleArea = 100;
-    expect(compare(circleArea, squareArea)).toBe("can be inscribed")
-  })
+    expect(compare(circleArea, squareArea)).toBe("can be inscribed");
+  });
 
-  it('returns "cannot be inscribed in a square"', ()=>{
+  it('returns "cannot be inscribed in a square"', () => {
     const squareArea = 50;
     const circleArea = 100;
-    expect(compare(circleArea, squareArea)).toBe("cannot be inscribed")
-  })
+    expect(compare(circleArea, squareArea)).toBe("cannot be inscribed");
+  });
 
-  it('returns "Input values should be numbers"', ()=>{
-    const squareArea = '150';
+  it('returns "Input values should be numbers"', () => {
+    const squareArea = "150";
     const circleArea = 100;
-    expect(compare(circleArea, squareArea)).toBe("values should be numbers")
-  })
+    expect(compare(circleArea, squareArea)).toBe("values should be numbers");
+  });
 
-  it('returns "one of values is 0"', ()=>{
+  it('returns "one of values is 0"', () => {
     const squareArea = 0;
     const circleArea = 100;
     expect(compare(circleArea, squareArea)).toBe("one of values is 0");
-  })
-})
+  });
+});

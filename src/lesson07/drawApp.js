@@ -10,7 +10,7 @@ export function drawApp(el) {
   </div>
   `;
 
-   return newEl;;
+  return newEl;
 }
 
 export function showHideButton(button, inputValue) {
@@ -38,12 +38,12 @@ export function addItem(input, el) {
   if (isNotEmpty(inputValue)) {
     if (pList.length >= 5) {
       let text = "";
-      for (let i = 1; i < pList.length; i+=1) {
+      for (let i = 1; i < pList.length; i += 1) {
         text += `<p>${pList[i].textContent}</p>`;
       }
 
       div.innerHTML = `${text}`;
-      div.innerHTML += `<p>${inputValue}</p>`; 
+      div.innerHTML += `<p>${inputValue}</p>`;
     } else {
       div.innerHTML += `<p>${inputValue}</p>`;
     }

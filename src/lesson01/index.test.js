@@ -11,13 +11,13 @@ describe("exercise 1 return sum and multiply of two numbers", () => {
 
   it('returns "not numbers" for strings "str1" and "str2"', () => {
     const str1 = "abc";
-      const str2 = "def";
+    const str2 = "def";
     expect(sumAndMultiplyOutput(str1, str2)).toBe("not numbers");
   });
 
   it("returns 'not numbers' for value1 = NaN and value2 = NaN values", () => {
     const value1 = NaN;
-      const value2 = NaN;
+    const value2 = NaN;
     expect(sumAndMultiplyOutput(value1, value2)).toBe("not numbers");
   });
 });

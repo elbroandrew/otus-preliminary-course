@@ -14,9 +14,9 @@ export const diff = (a, b) => {
 
 // 2
 export const isWord = (text) => {
-    const word = text.split(" ").length === 1 ? "is word" : "is line";
-    return word;
-}
+  const word = text.split(" ").length === 1 ? "is word" : "is line";
+  return word;
+};
 
 // isWord("afsdfef eyrefd");
 

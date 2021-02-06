@@ -19,14 +19,14 @@ describe("drawApp returns div", () => {
 describe("showHideButton", () => {
   it("returns true if button is hidden for input value '' ", () => {
     input.value = "";
-    const {value} = input;
+    const { value } = input;
     showHideButton(button, value);
     expect(button.hidden).toBeTruthy();
   });
 
   it("returns false if button is not hidden for value 'abcd' ", () => {
     input.value = "abcd";
-    const {value} = input;
+    const { value } = input;
     showHideButton(button, value);
     expect(button.hidden).toBeFalsy();
   });

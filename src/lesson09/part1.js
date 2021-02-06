@@ -1,18 +1,18 @@
 export function longerSide(a, b, c) {
   if (a && b && c) {
     // check the longer side
-    if(a > b){
-      if(a > c){
+    if (a > b) {
+      if (a > c) {
         return a;
       }
       return c;
     }
-      if(b > c){
-        return b;
-      }
-      return c;
+    if (b > c) {
+      return b;
     }
-  
+    return c;
+  }
+
   return "wrong value";
 }
 

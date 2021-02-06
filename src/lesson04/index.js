@@ -1,13 +1,13 @@
 // let input = prompt("Введите возвраст числом: ");
 
 const user = {
-    name: "John",
-}
+  name: "John",
+};
 
-export function adminData(input){
+export function adminData(input) {
   user.age = parseInt(input, 10);
-  const admin = { ...user};
-  admin.role = 'admin';
+  const admin = { ...user };
+  admin.role = "admin";
   return admin;
 }
 

@@ -15,7 +15,7 @@ export function isGreater(a, b) {
 
 export function monthName(input) {
   const index = parseInt(input, 10);
-  let name = '';
+  let name = "";
   switch (index) {
     case 1:
       name = "January";
@@ -75,9 +75,11 @@ export function compare(circle, square) {
     const d = Math.sqrt(circle / Math.PI) * 2;
     if (a === 0 || d === 0) {
       return "one of values is 0";
-    } if (d <= a) {
+    }
+    if (d <= a) {
       return "can be inscribed";
-    } if (d > a) {
+    }
+    if (d > a) {
       return "cannot be inscribed";
     }
   }

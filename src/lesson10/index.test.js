@@ -8,7 +8,7 @@ describe("checkEmail", () => {
       "xxx_xxx123@xxxxx.xxx",
       "Xxxxx0123-xxx@xxxx.xx",
       "xxx-12@xx24.xx",
-      "xxx.xxxx@xxx.xx"
+      "xxx.xxxx@xxx.xx",
     ];
 
     trueEmails.forEach((email) => {
@@ -21,7 +21,7 @@ describe("checkEmail", () => {
       "xxxx@xxx.xxxxx",
       "xxXX@xxx.XXX",
       "xxx|xxx123@xxxxx.xxx",
-      "xxxxxxxxxxx.xx"
+      "xxxxxxxxxxx.xx",
     ];
 
     falseEmails.forEach((email) => {
@@ -37,7 +37,7 @@ describe("checkDate", () => {
       "1999.5.5",
       "2018-20-03",
       "1999/21/12",
-      "2002.1.2"
+      "2002.1.2",
     ];
 
     trueDate.forEach((date) => {
@@ -64,7 +64,7 @@ describe("checkDate", () => {
       "222.11.1999",
       "1999. 19.2",
       "1999 /19/2",
-      "1999 19 2"
+      "1999 19 2",
     ];
 
     falseDate.forEach((date) => {
@@ -83,7 +83,7 @@ describe("checkPhone", () => {
       "8-123-456-78-90",
       "81234567890",
       "+7 123 456-78-90",
-      "8 999 999 9999"
+      "8 999 999 9999",
     ];
 
     trueNumbers.forEach((number) => {
@@ -109,7 +109,7 @@ describe("checkPhone", () => {
       "8--------123456-------789------------------0123",
       "9091234567",
       "909 123 45 67",
-      "909-123-45-67 "
+      "909-123-45-67 ",
     ];
 
     falseNumbers.forEach((number) => {
