@@ -78,7 +78,7 @@ export function compare(circle, square) {
     } if (d <= a) {
       return "can be inscribed";
     } if (d > a) {
-      return "cannot be inscribed ";
+      return "cannot be inscribed";
     }
   }
   return "values should be numbers";
