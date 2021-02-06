@@ -1,6 +1,11 @@
 // 1
 export const sumAndMultiplyOutput = (a, b) => {
-  if (!Number.isNaN(a) || !Number.isNaN(b)) {
+  if (
+    !Number.isNaN(a) &&
+    typeof a === "number" &&
+    !Number.isNaN(b) &&
+    typeof b === "number"
+  ) {
     return { sum: a + b, mul: a * b };
   }
   return "not numbers";

@@ -1,15 +1,14 @@
+// let input = prompt("Введите возвраст числом: ");
+
 const user = {
-  name: "John",
-};
+    name: "John",
+}
 
-const input = prompt("Введите возвраст числом: ");
-user.age = parseInt(input);
+export function adminData(input){
+  user.age = parseInt(input, 10);
+  const admin = { ...user};
+  admin.role = 'admin';
+  return admin;
+}
 
-// copy object
-const admin = { ...user };
-admin.role = "admin";
-
-// destructuring
-const { name, age, role } = admin;
-
-console.log(name);
+// const {name, age, role} = adminData(input);
