@@ -1,16 +1,7 @@
 export function longerSide(a, b, c) {
   if (a && b && c) {
-    // check the longer side
-    if (a > b) {
-      if (a > c) {
-        return a;
-      }
-      return c;
-    }
-    if (b > c) {
-      return b;
-    }
-    return c;
+    const sortedArray = [a, b, c].sort((x, y) => x - y);
+    return sortedArray[sortedArray.length - 1];
   }
 
   return "wrong value";

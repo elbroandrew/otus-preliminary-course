@@ -1,5 +1,5 @@
 import { adminData } from "./index";
-
+/* eslint-disable no-alert */
 describe("getData", () => {
   let globalPrompt;
   beforeEach(() => {
@@ -10,8 +10,8 @@ describe("getData", () => {
   });
 
   function getAge() {
-    globalPrompt = jest.fn().mockReturnValue("10");
-    const age = globalPrompt();
+    window.prompt = jest.fn().mockReturnValue("10");
+    const age = window.prompt();
     return age;
   }
 

@@ -1,17 +1,10 @@
 // 1
-// let a = 5;
-// let b = 7;
 export function isGreater(a, b) {
   if (typeof a === "number" && typeof b === "number") {
     return a > b ? a : b;
   }
   return "a or b is not a number";
 }
-// console.log(isGreater(a, b));
-
-// 2
-
-// let input = prompt("Type a number between 1 and 12 :");
 
 export function monthName(input) {
   const index = parseInt(input, 10);
@@ -59,8 +52,6 @@ export function monthName(input) {
   return name;
 }
 // 3
-// const circleArea = 28;
-// const squareArea = 50;
 
 export function compare(circle, square) {
   if (
@@ -85,5 +76,3 @@ export function compare(circle, square) {
   }
   return "values should be numbers";
 }
-
-// compare(circleArea, squareArea);

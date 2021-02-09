@@ -1,17 +1,14 @@
-// 1
-export const sumAndMultiplyOutput = (a, b) => {
-  if (
-    !Number.isNaN(a) &&
-    typeof a === "number" &&
-    !Number.isNaN(b) &&
-    typeof b === "number"
-  ) {
-    return { sum: a + b, mul: a * b };
+export const sumAndMultiplyOutput = (s1, s2) => {
+  const a = Number(s1);
+  const b = Number(s2);
+  if (Number.isNaN(a) || Number.isNaN(b)) {
+    return "not numbers";
   }
-  return "not numbers";
+  /* eslint-disable no-console */
+  return console.log(`sum = ${a + b}; mul = ${a * b}`);
+  /* eslint-enable no-console */
 };
 
-// 2
 export const strSum = (a, b) => {
   if (typeof a === "string" && typeof b === "string") {
     return a.length + b.length;
@@ -19,33 +16,17 @@ export const strSum = (a, b) => {
   return "not strings";
 };
 
-// 3
-/**
- * function receives prompt string and returns digits sum
- * @param {string} input
- */
 export const sumOfInputDigits = (input) => {
-  if (/^(-{1})?\d{3}$/.test(input)) {
-    // it is a string of 3 digits (minus sign included)
-    // get array
-    const inputArray = input.split("");
-    if (inputArray[0] === "-") {
-      inputArray.shift();
-    }
-    // get sum
-    /* eslint-disable no-param-reassign */
-    return inputArray.reduce((acc, digit) => {
-      acc += Number(digit);
-      return acc;
-    }, 0);
-    /* eslint-enable no-param-reassign */
-  }
-  if (input === "") {
+  if (input.length === 0) {
     return "Empty value";
   }
-  // one or more digits is not a number
-  return `${input} is not a 3-digit number`;
+  if (!/^(-{1})?\d{3}$/.test(input)) {
+    return `${input} is not a 3-digit number`;
+  }
+  const inputArray = Math.abs(input).toString(10).split("");
+  let result = 0;
+  for (let i = 0; i < inputArray.length; i += 1) {
+    result += Number.parseInt(inputArray[i], 10);
+  }
+  return result;
 };
-
-// let input = prompt("Enter a 3-digit integer number: ");
-// sumOfInputDigits(input);

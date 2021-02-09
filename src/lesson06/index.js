@@ -18,8 +18,6 @@ export const isWord = (text) => {
   return word;
 };
 
-// isWord("afsdfef eyrefd");
-
 // 3
 export const pow = (a, x) => {
   if (
@@ -32,5 +30,3 @@ export const pow = (a, x) => {
   }
   return "parameters should be numbers";
 };
-
-// pow(3, 2)

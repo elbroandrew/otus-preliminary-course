@@ -1,5 +1,5 @@
 import { isGreater, monthName, compare } from "./index";
-
+/* eslint-disable no-alert */
 describe("exercise 1 isGreater", () => {
   it("returns 7 for 7 and 5", () => {
     expect(isGreater(5, 7)).toBe(7);
@@ -19,16 +19,33 @@ describe("exercise 1 isGreater", () => {
 });
 
 describe("exercise 2 monthName", () => {
+  let globalPrompt;
+  beforeEach(() => {
+    globalPrompt = window.prompt;
+  });
+  afterEach(() => {
+    window.prompt = globalPrompt;
+  });
+
+  function promptNumber(value) {
+    window.prompt = jest.fn().mockReturnValue(value);
+    const num = window.prompt();
+    return num;
+  }
+
   it('should return January for "1" ', () => {
-    expect(monthName("1")).toBe("January");
+    const num = promptNumber("1");
+    expect(monthName(num)).toBe("January");
   });
 
   it('returns "It should be a number between 1 and 12" for "0"', () => {
-    expect(monthName("0")).toBe("It should be a number between 1 and 12");
+    const num = promptNumber("0");
+    expect(monthName(num)).toBe("It should be a number between 1 and 12");
   });
 
   it('returns "It should be a number between 1 and 12" for "[]"', () => {
-    expect(monthName("[]")).toBe("It should be a number between 1 and 12");
+    const num = promptNumber("[]");
+    expect(monthName(num)).toBe("It should be a number between 1 and 12");
   });
 });
 

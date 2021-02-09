@@ -1,12 +1,24 @@
 import { sumAndMultiplyOutput, strSum, sumOfInputDigits } from "./index";
-
+/* eslint-disable no-console */
+/* eslint-disable no-alert */
 // 1
 describe("exercise 1 return sum and multiply of two numbers", () => {
-  it("returns 'obj.sum' to be 5 and 'obj.mul' to be 6 for 2 and 3", () => {
-    const obj = sumAndMultiplyOutput(2, 3);
+  it("returns 'sum=5' and 'mul=6' for '2' and '3'", () => {
+    let windowPrompt;
+    beforeEach(() => {
+      windowPrompt = window.prompt;
+    });
+    afterEach(() => {
+      window.prompt = windowPrompt;
+    });
 
-    expect(obj.sum).toBe(5);
-    expect(obj.mul).toBe(6);
+    jest.spyOn(console, "log");
+    window.prompt = jest.fn().mockReturnValue("2");
+    const a = window.prompt();
+    window.prompt = jest.fn().mockReturnValue("3");
+    const b = window.prompt();
+    sumAndMultiplyOutput(a, b);
+    expect(console.log).toBeCalledWith("sum = 5; mul = 6");
   });
 
   it('returns "not numbers" for strings "str1" and "str2"', () => {

@@ -31,7 +31,7 @@ describe("checkEmail", () => {
 });
 
 describe("checkDate", () => {
-  it("returns true for each value YYYY/DD/MM ", () => {
+  it("returns true for every value true date", () => {
     const trueDate = [
       "1999/10/1",
       "1999.5.5",
@@ -45,7 +45,7 @@ describe("checkDate", () => {
     });
   });
 
-  it("returns false for each other value ", () => {
+  it("returns false for every false date ", () => {
     const falseDate = [
       "2000/111/22",
       "2000/11/222",

@@ -11,7 +11,7 @@ export function sumOfFifty() {
 export function multiplyTableForSeven() {
   let y = 1;
   let table = "";
-  while (y <= 10) {
+  while (y <= 9) {
     const mul = y * 7;
     table += `7 x ${y} = ${mul}\n`;
     y += 1;
@@ -20,18 +20,13 @@ export function multiplyTableForSeven() {
 }
 
 // 3
-// let input = prompt('Enter a number: ');
 
 export const oddSum = (input) => {
   const numArr = input.split("");
-  const result = numArr.reduce((acc, num) => {
-    /* eslint-disable no-param-reassign */
-    acc += Number(num);
-    /* eslint-enable no-param-reassign */
-    return acc;
+  const sum = numArr.reduce((acc, num) => {
+    const result = acc + Number(num);
+    return result;
   }, 0);
 
-  return result / 2;
+  return sum / 2;
 };
-
-// oddSum(input);

@@ -1,12 +1,10 @@
 // 1
 
 export function sum(arr) {
-  /* eslint-disable no-param-reassign */
   const result = arr.reduce((acc, index) => {
-    acc += index;
-    return acc;
+    const res = acc + index;
+    return res;
   }, 0);
-  /* eslint-enable no-param-reassign */
   return result;
 }
 
@@ -18,13 +16,8 @@ export function doubleArray(arr) {
 // 3
 export function minAndMax(arr1) {
   if (arr1.length !== 0) {
-    let max = arr1[0];
-    let min = arr1[0];
-    for (let i = 1; i <= arr1.length; i += 1) {
-      if (arr1[i] > max) max = arr1[i];
-      if (arr1[i] < min) min = arr1[i];
-    }
-    return { min, max };
+    arr1.sort((a, b) => a - b);
+    return { min: arr1[0], max: arr1[arr1.length - 1] };
   }
   return "empty array";
 }
