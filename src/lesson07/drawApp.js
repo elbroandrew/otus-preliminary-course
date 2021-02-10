@@ -51,3 +51,23 @@ export function addItem(input, el) {
   }
   currentInput.value = "";
 }
+
+export function initListeners(app) {
+  const button = app.querySelector("button");
+  const input = app.querySelector("input");
+
+  showHideButton(button, input.value);
+
+  input.addEventListener("input", () => {
+    showHideButton(button, input.value);
+  });
+
+  button.addEventListener("click", (ev) => {
+    ev.preventDefault();
+    /* eslint-disable no-console */
+    console.log("clicked");
+    /* eslint-enable no-console */
+    addItem(input, app);
+    showHideButton(button, input.value);
+  });
+}

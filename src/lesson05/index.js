@@ -1,10 +1,7 @@
 // 1
 
 export function sum(arr) {
-  const result = arr.reduce((acc, index) => {
-    const res = acc + index;
-    return res;
-  }, 0);
+  const result = arr.reduce((acc, index) => acc + index, 0);
   return result;
 }
 

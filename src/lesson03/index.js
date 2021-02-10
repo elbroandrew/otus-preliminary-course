@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // 1
 export function sumOfFifty() {
   let sum = 0;
@@ -10,23 +11,19 @@ export function sumOfFifty() {
 // 2
 export function multiplyTableForSeven() {
   let y = 1;
-  let table = "";
   while (y <= 9) {
-    const mul = y * 7;
-    table += `7 x ${y} = ${mul}\n`;
+    console.log(`7 x ${y} = ${y * 7}`);
     y += 1;
   }
-  return table;
 }
 
 // 3
-
 export const oddSum = (input) => {
   const numArr = input.split("");
   const sum = numArr.reduce((acc, num) => {
-    const result = acc + Number(num);
+    let result = acc + Number(num);
+    result /= 2;
     return result;
   }, 0);
-
-  return sum / 2;
+  return sum;
 };

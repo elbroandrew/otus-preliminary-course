@@ -1,19 +1,17 @@
+/* eslint-disable no-console */
 export const sumAndMultiplyOutput = (s1, s2) => {
-  const a = Number(s1);
-  const b = Number(s2);
-  if (Number.isNaN(a) || Number.isNaN(b)) {
-    return "not numbers";
+  if (s1.length !== 0 && s2.length !== 0) {
+    const a = Number(s1);
+    const b = Number(s2);
+    if (!Number.isNaN(a) || !Number.isNaN(b)) {
+      console.log(`sum = ${a + b}; mul = ${a * b}`);
+    }
   }
-  /* eslint-disable no-console */
-  return console.log(`sum = ${a + b}; mul = ${a * b}`);
-  /* eslint-enable no-console */
+  return "not numbers";
 };
 
 export const strSum = (a, b) => {
-  if (typeof a === "string" && typeof b === "string") {
-    return a.length + b.length;
-  }
-  return "not strings";
+  console.log(a.length + b.length);
 };
 
 export const sumOfInputDigits = (input) => {

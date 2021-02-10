@@ -20,7 +20,6 @@ export function isRightTriangle(a, b, c) {
       return compare(a, b, c);
     case a:
       return compare(c, b, a);
-
     case b:
       return compare(c, a, b);
     default:

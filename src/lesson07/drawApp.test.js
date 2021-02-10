@@ -1,18 +1,41 @@
-import { drawApp, showHideButton, addItem, isNotEmpty } from "./drawApp";
+/* eslint-disable no-console */
+import {
+  drawApp,
+  showHideButton,
+  addItem,
+  isNotEmpty,
+  initListeners,
+} from "./drawApp";
 
-const div = document.createElement("div");
-const input = document.createElement("input");
-const button = document.createElement("button");
-const p = document.createElement("p");
-div.appendChild(input);
-div.appendChild(button);
-div.appendChild(p);
-div.appendChild(p);
-div.appendChild(p);
+document.body.innerHTML = `
+<div id="app">
+  <input />
+  <button>add</button>
+  <div>
+    <p>test 1</p>
+    <p>test 2</p>
+    <p>test 3</p>
+  </div>
+</div>
+`;
+
+const button = document.body.querySelector("button");
+const div = document.body.querySelector("div");
+const input = document.body.querySelector("input");
+const app = document.querySelector("#app");
+initListeners(app);
 
 describe("drawApp returns div", () => {
   it("returns true if div exists", () => {
-    expect(drawApp(div)).not.toBeNull();
+    expect(drawApp(app)).not.toBeNull();
+  });
+});
+
+describe("this suit tests event listener", () => {
+  it("checks event listener", () => {
+    jest.spyOn(console, "log");
+    button.dispatchEvent(new Event("click"));
+    expect(console.log).toBeCalledWith("clicked");
   });
 });
 

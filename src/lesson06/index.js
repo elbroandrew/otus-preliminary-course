@@ -6,8 +6,7 @@ export const diff = (a, b) => {
     typeof b === "number" &&
     !Number.isNaN(b)
   ) {
-    const result = a > b ? a - b : b - a;
-    return result;
+    return Math.abs(a - b);
   }
   return "parameters should be numbers";
 };

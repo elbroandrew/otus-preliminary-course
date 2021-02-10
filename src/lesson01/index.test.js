@@ -36,15 +36,22 @@ describe("exercise 1 return sum and multiply of two numbers", () => {
 
 // 2
 describe("exercise 2 two strings sum", () => {
-  it("returns 10 for strings 'lorem' and 'ipsum'", () => {
-    expect(strSum("lorem", "ipsum")).toBe(10);
+  let windowPrompt;
+  beforeEach(() => {
+    windowPrompt = window.prompt;
+  });
+  afterEach(() => {
+    window.prompt = windowPrompt;
   });
 
-  it('returns "not strings" for numbers 1 and 2', () => {
-    expect(strSum(1, 2)).toBe("not strings");
-  });
-  it('returns "not strings" for arrays', () => {
-    expect(strSum([], [])).toBe("not strings");
+  it("returns 10 for strings 'lorem' and 'ipsum'", () => {
+    jest.spyOn(console, "log");
+    window.prompt = jest.fn().mockReturnValue("lorem");
+    const str1 = window.prompt();
+    window.prompt = jest.fn().mockReturnValue("ipsum");
+    const str2 = window.prompt();
+    strSum(str1, str2);
+    expect(console.log).toBeCalledWith(10);
   });
 });
 // 3
