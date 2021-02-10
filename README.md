@@ -1,6 +1,7 @@
-# Javascript Developer: Basic
- Otus подготовительный курс с упражнениями.
- Настройка окружения (ESLint, prettier, CI, Jest, husky).
+## Javascript Developer: Basic
+
+Otus подготовительный курс с упражнениями.
+Настройка окружения (ESLint, prettier, CI, Jest, husky).
 
 ## Структура репозитория
 
