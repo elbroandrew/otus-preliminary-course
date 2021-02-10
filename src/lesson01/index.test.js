@@ -1,23 +1,18 @@
 import { sumAndMultiplyOutput, strSum, sumOfInputDigits } from "./index";
-/* eslint-disable no-console */
-/* eslint-disable no-alert */
-// 1
+
+let windowPrompt;
+beforeAll(() => {
+  windowPrompt = window.prompt;
+  jest.spyOn(console, "log");
+});
+afterAll(() => {
+  window.prompt = windowPrompt;
+});
+
 describe("exercise 1 return sum and multiply of two numbers", () => {
   it("returns 'sum=5' and 'mul=6' for '2' and '3'", () => {
-    let windowPrompt;
-    beforeEach(() => {
-      windowPrompt = window.prompt;
-    });
-    afterEach(() => {
-      window.prompt = windowPrompt;
-    });
-
-    jest.spyOn(console, "log");
-    window.prompt = jest.fn().mockReturnValue("2");
-    const a = window.prompt();
-    window.prompt = jest.fn().mockReturnValue("3");
-    const b = window.prompt();
-    sumAndMultiplyOutput(a, b);
+    window.prompt = jest.fn().mockReturnValueOnce("2").mockReturnValueOnce("3");
+    sumAndMultiplyOutput(window.prompt(), window.prompt());
     expect(console.log).toBeCalledWith("sum = 5; mul = 6");
   });
 
@@ -34,27 +29,17 @@ describe("exercise 1 return sum and multiply of two numbers", () => {
   });
 });
 
-// 2
 describe("exercise 2 two strings sum", () => {
-  let windowPrompt;
-  beforeEach(() => {
-    windowPrompt = window.prompt;
-  });
-  afterEach(() => {
-    window.prompt = windowPrompt;
-  });
-
   it("returns 10 for strings 'lorem' and 'ipsum'", () => {
-    jest.spyOn(console, "log");
-    window.prompt = jest.fn().mockReturnValue("lorem");
-    const str1 = window.prompt();
-    window.prompt = jest.fn().mockReturnValue("ipsum");
-    const str2 = window.prompt();
-    strSum(str1, str2);
+    window.prompt = jest
+      .fn()
+      .mockReturnValueOnce("lorem")
+      .mockReturnValueOnce("ipsum");
+    strSum(window.prompt(), window.prompt());
     expect(console.log).toBeCalledWith(10);
   });
 });
-// 3
+
 describe("exercise 3, sum of digits in 3-digit number", () => {
   it("returns 6 for '123' ", () => {
     expect(sumOfInputDigits("123")).toBe(6);

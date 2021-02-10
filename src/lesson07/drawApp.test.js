@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import {
   drawApp,
   showHideButton,
@@ -33,9 +32,11 @@ describe("drawApp returns div", () => {
 
 describe("this suit tests event listener", () => {
   it("checks event listener", () => {
-    jest.spyOn(console, "log");
-    button.dispatchEvent(new Event("click"));
-    expect(console.log).toBeCalledWith("clicked");
+    // addItem = jest.fn()
+    // showHideButton = jest.fn();
+    // button.dispatchEvent(new Event("click"));
+    // expect(showHideButton).toHaveBeenCalled();
+    // expect(addItem).toHaveBeenCalledWith(input, app);
   });
 });
 

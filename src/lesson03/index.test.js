@@ -1,6 +1,5 @@
 import { oddSum, multiplyTableForSeven, sumOfFifty } from "./index";
-/* eslint-disable no-alert */
-/* eslint-disable no-console */
+
 describe("exercise 1 sumOfFifty", () => {
   it("returned value should not be greater than 3825", () => {
     expect(sumOfFifty()).not.toBeGreaterThan(3825);

@@ -1,5 +1,5 @@
 import { isGreater, monthName, compare } from "./index";
-/* eslint-disable no-alert */
+
 describe("exercise 1 isGreater", () => {
   it("returns 7 for 7 and 5", () => {
     expect(isGreater(5, 7)).toBe(7);

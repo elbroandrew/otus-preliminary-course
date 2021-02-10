@@ -60,9 +60,7 @@ export function compare(circle, square) {
     typeof square === "number" &&
     !Number.isNaN(square)
   ) {
-    // side of the square
     const a = Math.sqrt(square);
-    // diameter of circle
     const d = Math.sqrt(circle / Math.PI) * 2;
     if (a === 0 || d === 0) {
       return "one of values is 0";

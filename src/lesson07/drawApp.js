@@ -23,7 +23,7 @@ export function showHideButton(button, inputValue) {
 }
 
 export function isNotEmpty(content) {
-  const regex = new RegExp(/^\s+$/g); // whitespace line
+  const regex = new RegExp(/^\s+$/g);
   if (!regex.test(content) && content !== "") {
     return true;
   }
@@ -64,9 +64,6 @@ export function initListeners(app) {
 
   button.addEventListener("click", (ev) => {
     ev.preventDefault();
-    /* eslint-disable no-console */
-    console.log("clicked");
-    /* eslint-enable no-console */
     addItem(input, app);
     showHideButton(button, input.value);
   });

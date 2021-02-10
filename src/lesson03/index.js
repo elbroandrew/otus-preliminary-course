@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 // 1
 export function sumOfFifty() {
   let sum = 0;

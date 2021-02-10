@@ -1,5 +1,5 @@
 import { adminData } from "./index";
-/* eslint-disable no-alert */
+
 describe("getData", () => {
   let globalPrompt;
   beforeEach(() => {

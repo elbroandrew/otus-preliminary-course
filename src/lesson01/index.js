@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 export const sumAndMultiplyOutput = (s1, s2) => {
   if (s1.length !== 0 && s2.length !== 0) {
     const a = Number(s1);
