@@ -32,11 +32,11 @@ describe("drawApp returns div", () => {
 
 describe("this suit tests event listener", () => {
   it("checks event listener", () => {
-    const f = jest.fn()
-    button.addEventListener('click', () => {
+    const f = jest.fn();
+    button.addEventListener("click", () => {
       f();
-    })
-    button.click()
+    });
+    button.click();
     expect(f).toHaveBeenCalled();
   });
 });
