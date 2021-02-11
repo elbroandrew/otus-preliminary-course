@@ -32,11 +32,12 @@ describe("drawApp returns div", () => {
 
 describe("this suit tests event listener", () => {
   it("checks event listener", () => {
-    // addItem = jest.fn()
-    // showHideButton = jest.fn();
-    // button.dispatchEvent(new Event("click"));
-    // expect(showHideButton).toHaveBeenCalled();
-    // expect(addItem).toHaveBeenCalledWith(input, app);
+    const f = jest.fn()
+    button.addEventListener('click', () => {
+      f();
+    })
+    button.click()
+    expect(f).toHaveBeenCalled();
   });
 });
 
