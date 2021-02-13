@@ -1,10 +1,7 @@
-import {
-  drawApp,
-  showHideButton,
-  addItem,
-  isNotEmpty,
-  initListeners,
-} from "./drawApp";
+import { drawApp, isNotEmpty } from "./drawApp";
+import * as showButtonModule from "./showHideButton";
+import * as addItemModule from "./addItem";
+import { initListeners } from "./initListeners";
 
 document.body.innerHTML = `
 <div id="app">
@@ -31,13 +28,21 @@ describe("drawApp returns div", () => {
 });
 
 describe("this suit tests event listener", () => {
+  it("test showHideButton", () => {
+    expect(showButtonModule.showHideButton).toBeInstanceOf(Function);
+  });
+
   it("checks event listener", () => {
-    const f = jest.fn();
-    button.addEventListener("click", () => {
-      f();
-    });
+    const spy = jest.spyOn(showButtonModule, "showHideButton");
     button.click();
-    expect(f).toHaveBeenCalled();
+    expect(showButtonModule.showHideButton).toHaveBeenCalled();
+    spy.mockRestore();
+  });
+  it("checks event listener", () => {
+    const spy = jest.spyOn(addItemModule, "addItem");
+    button.click();
+    expect(addItemModule.addItem).toHaveBeenCalled();
+    spy.mockRestore();
   });
 });
 
@@ -45,14 +50,14 @@ describe("showHideButton", () => {
   it("returns true if button is hidden for input value '' ", () => {
     input.value = "";
     const { value } = input;
-    showHideButton(button, value);
+    showButtonModule.showHideButton(button, value);
     expect(button.hidden).toBeTruthy();
   });
 
   it("returns false if button is not hidden for value 'abcd' ", () => {
     input.value = "abcd";
     const { value } = input;
-    showHideButton(button, value);
+    showButtonModule.showHideButton(button, value);
     expect(button.hidden).toBeFalsy();
   });
 });
@@ -60,7 +65,7 @@ describe("showHideButton", () => {
 describe("addItem", () => {
   it("adds new p element and returns 'milk'", () => {
     input.value = "milk";
-    addItem(input, div);
+    addItemModule.addItem(input, div);
     const pNodesList = div.querySelectorAll("p");
     const pp = pNodesList[3];
     expect(pp.textContent).toEqual("milk");
@@ -78,7 +83,7 @@ describe("addItem", () => {
     <p>test 4</p>
     <p>test 5</p>
     `;
-    addItem(input, div);
+    addItemModule.addItem(input, div);
     const pList = div.querySelectorAll("p");
 
     expect(pList[0].textContent).toEqual("test 2");
