@@ -1,7 +1,7 @@
-import { drawApp, isNotEmpty } from "./drawApp";
-import * as showButtonModule from "./showHideButton";
-import * as addItemModule from "./addItem";
-import { initListeners } from "./initListeners";
+import { drawApp, isNotEmpty } from "./drawApp.js";
+import * as showButtonModule from "./showHideButton.js";
+import * as addItemModule from "./addItem.js";
+import { initListeners } from "./initListeners.js";
 
 document.body.innerHTML = `
 <div id="app">
@@ -33,16 +33,14 @@ describe("this suit tests event listener", () => {
   });
 
   it("checks event listener", () => {
-    const spy = jest.spyOn(showButtonModule, "showHideButton");
+    jest.spyOn(showButtonModule, "showHideButton");
     button.click();
     expect(showButtonModule.showHideButton).toHaveBeenCalled();
-    spy.mockRestore();
   });
   it("checks event listener", () => {
-    const spy = jest.spyOn(addItemModule, "addItem");
+    jest.spyOn(addItemModule, "addItem");
     button.click();
     expect(addItemModule.addItem).toHaveBeenCalled();
-    spy.mockRestore();
   });
 });
 

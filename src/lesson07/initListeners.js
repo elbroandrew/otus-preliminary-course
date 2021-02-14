@@ -1,5 +1,5 @@
-import { showHideButton } from "./showHideButton";
-import { addItem } from "./addItem";
+import { showHideButton } from "./showHideButton.js";
+import { addItem } from "./addItem.js";
 
 export function initListeners(app) {
   const button = app.querySelector("button");

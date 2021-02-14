@@ -1,5 +1,5 @@
-import { drawApp } from "./drawApp";
-import { initListeners } from "./initListeners";
+import { drawApp } from "./drawApp.js";
+import { initListeners } from "./initListeners.js";
 
 const app = document.querySelector("#app");
 drawApp(app);

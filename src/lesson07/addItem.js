@@ -1,4 +1,4 @@
-import { isNotEmpty } from "./drawApp";
+import { isNotEmpty } from "./drawApp.js";
 
 export function addItem(input, el) {
   const currentInput = input;
@@ -19,5 +19,4 @@ export function addItem(input, el) {
     }
     currentInput.value = "";
   }
-  currentInput.value = "";
 }
